@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateFlightDetailsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('flight_details', function (Blueprint $table) {
+            $table->id();
+            $table->integer('case_1_id')->nullable();           
+            $table->integer('case_2_id')->nullable();
+            $table->string('rn_outbound')->nullable();
+            $table->string('client_rn')->nullable();
+            $table->string('rn_return')->nullable();
+            $table->string('notes')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('flight_details');
+    }
+}

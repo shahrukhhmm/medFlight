@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateCase1sTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('case1s', function (Blueprint $table) {
+            $table->id();
+            $table->integer('status')->nullable();
+            $table->string('dob')->nullable();
+            $table->string('coordinator')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('fax')->nullable();
+            $table->string('rn')->nullable();
+            $table->string('rn_email')->nullable();
+            $table->string('rn_fax')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('case1s');
+    }
+}
